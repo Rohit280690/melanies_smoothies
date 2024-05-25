@@ -8,6 +8,8 @@ st.write(
     """Choose the fruits you want in your custome Smoothie!
     """
 )
+st.write("DB username:", st.secrets["db_username"])
+st.write("DB password:", st.secrets["db_password"])
 
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on smoothie will be',name_on_order)
