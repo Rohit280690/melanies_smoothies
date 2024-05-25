@@ -8,8 +8,6 @@ st.write(
     """Choose the fruits you want in your custome Smoothie!
     """
 )
-st.write("DB username:", st.secrets["db_username"])
-st.write("DB password:", st.secrets["db_password"])
 
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on smoothie will be',name_on_order)
@@ -26,6 +24,7 @@ st.write('The name on smoothie will be',name_on_order)
 #    ('Banana','Strawberries','Peaches')
 #)
 #st.write('You favorite fruit is:', option)
+
 cnx=st.connection("snowflake")
 session = cnx.connection()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
